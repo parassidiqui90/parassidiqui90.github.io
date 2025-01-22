@@ -64,12 +64,14 @@ nav {
 
 /* Hero Section */
 .hero {
-    background-image: url('images/hero-bg.jpg');
-    background-size: cover;
-    background-position: center;
-    height: 100vh;
     position: relative;
-    color: white;
+    height: 100vh;
+    min-height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
 }
 
 .hero-overlay {
@@ -78,145 +80,150 @@ nav {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7));
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
 }
 
 .hero-content {
     position: relative;
     z-index: 2;
+    color: #fff;
+    padding: 20px;
+    width: 100%;
     max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 2rem;
-    height: calc(100vh - 100px);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
 }
 
-.hero-content h1 {
+.hero h1 {
     font-size: 3.5rem;
-    font-weight: 700;
     margin-bottom: 1rem;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
-.hero-subtitle {
-    font-size: 1.5rem;
+.hero p {
+    font-size: 1.2rem;
     margin-bottom: 2rem;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
 }
 
-.hero-finder-form {
+/* Map Background */
+.map-background {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    max-width: 1000px;
-    background: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(10px);
-    padding: 2rem;
-    border-radius: 20px;
-    margin-top: 2rem;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none; /* Disable map interaction by default */
 }
 
-.hero-finder-form .form-row {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1.5rem;
-    margin-bottom: 1.5rem;
+.map-background.interactive {
+    pointer-events: auto; /* Enable map interaction when class is added */
 }
 
-.hero-finder-form .form-group {
-    display: flex;
-    flex-direction: column;
+#map {
+    width: 100%;
+    height: 100%;
 }
 
-.hero-finder-form label {
-    color: white;
-    margin-bottom: 0.5rem;
-    font-weight: 500;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-}
-
-.hero-finder-form label i {
-    color: #007bff;
-}
-
-.hero-finder-form input {
-    padding: 0.75rem 1rem;
-    border: none;
-    border-radius: 10px;
-    font-size: 1rem;
+/* Map Toggle Button */
+.map-toggle {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    z-index: 2;
     background: rgba(255, 255, 255, 0.9);
-    transition: all 0.3s ease;
-}
-
-.hero-finder-form input:focus {
-    outline: none;
-    background: white;
-    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.3);
-}
-
-.hero-finder-form .search-btn {
-    width: 100%;
-    padding: 1rem;
-    background: #007bff;
-    color: white;
     border: none;
-    border-radius: 10px;
-    font-size: 1.1rem;
-    font-weight: 500;
+    padding: 10px 20px;
+    border-radius: 5px;
     cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
+    font-size: 0.9rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
 }
 
-.hero-finder-form .search-btn:hover {
-    background: #0056b3;
+.map-toggle:hover {
+    background: white;
     transform: translateY(-2px);
 }
 
-.hero-finder-form .search-btn i {
-    font-size: 1.2rem;
+.map-toggle.active {
+    background: var(--primary-color);
+    color: white;
 }
 
-/* Responsive Design */
-@media (max-width: 1024px) {
-    .hero-finder-form .form-row {
-        grid-template-columns: repeat(2, 1fr);
+/* Search Container */
+.search-container {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    margin: 0 auto;
+    max-width: 900px;
+}
+
+.flight-search {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.search-group {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.search-group input,
+.search-group select {
+    flex: 1;
+    min-width: 200px;
+    padding: 12px 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.search-btn {
+    background: var(--primary-color);
+    color: white;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.search-btn:hover {
+    background: var(--secondary-color);
+}
+
+/* Flight path animation */
+.flight-path {
+    stroke-dasharray: 8;
+    animation: dash 20s linear infinite;
+}
+
+@keyframes dash {
+    to {
+        stroke-dashoffset: -1000;
     }
 }
 
-@media (max-width: 768px) {
-    .hero-content {
-        padding: 0 1rem;
-    }
+/* Airport and plane icons */
+.airport-icon {
+    background: none;
+    border: none;
+}
 
-    .hero-content h1 {
-        font-size: 2.5rem;
-    }
-    
-    .hero-subtitle {
-        font-size: 1.2rem;
-    }
-    
-    .hero-finder-form {
-        padding: 1.5rem;
-    }
+.plane-icon {
+    background: none;
+    border: none;
+    transition: transform 0.3s ease;
+}
 
-    .hero-finder-form .form-row {
-        grid-template-columns: 1fr;
-        gap: 1rem;
-    }
-    
-    .hero-finder-form input,
-    .hero-finder-form .search-btn {
-        width: 100%;
-    }
+.plane-icon i {
+    transform-origin: center;
 }
 
 /* Sections Common Styles */
@@ -516,43 +523,6 @@ section h2 {
 .flight-map-section .section-subtitle {
     margin-bottom: 40px;
     color: #666;
-}
-
-#map {
-    height: 600px;
-    width: 100%;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    margin: 0 auto;
-    z-index: 1;
-}
-
-/* Flight path animation */
-.flight-path {
-    stroke-dasharray: 8;
-    animation: dash 20s linear infinite;
-}
-
-@keyframes dash {
-    to {
-        stroke-dashoffset: -1000;
-    }
-}
-
-/* Airport and plane icons */
-.airport-icon {
-    background: none;
-    border: none;
-}
-
-.plane-icon {
-    background: none;
-    border: none;
-    transition: transform 0.3s ease;
-}
-
-.plane-icon i {
-    transform-origin: center;
 }
 
 /* Newsletter Section */

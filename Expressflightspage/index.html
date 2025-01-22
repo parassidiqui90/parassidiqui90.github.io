@@ -24,11 +24,23 @@
             height: 100%;
             background-color: rgba(0, 0, 0, 0.5);
         }
+        .map-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
     </style>
 </head>
 <body>
     <!-- Hero Section -->
     <section class="hero">
+        <div id="map" class="map-background"></div>
+        <button class="map-toggle" id="mapToggle">
+            <i class="fas fa-map-marker-alt"></i> Toggle Map Interaction
+        </button>
         <div class="hero-overlay"></div>
         <nav>
             <div class="nav-container">
@@ -383,13 +395,6 @@
                 </button>
             </div>
         </div>
-    </section>
-
-    <!-- Flight Map Section -->
-    <section id="flight-map" class="flight-map-section">
-        <h2>GLOBAL FLIGHT MAP</h2>
-        <p class="section-subtitle">Explore our flight routes across the globe</p>
-        <div id="map"></div>
     </section>
 
     <!-- Why Choose Us Section -->

@@ -19,6 +19,15 @@ const airports = {
 document.addEventListener('DOMContentLoaded', function() {
     // Initialize the map
     initializeMap();
+    
+    // Setup map toggle functionality
+    const mapToggle = document.getElementById('mapToggle');
+    const mapBackground = document.querySelector('.map-background');
+    
+    mapToggle.addEventListener('click', function() {
+        mapBackground.classList.toggle('interactive');
+        mapToggle.classList.toggle('active');
+    });
 });
 
 function initializeMap() {
@@ -27,12 +36,18 @@ function initializeMap() {
         center: [20, 0],
         zoom: 2,
         minZoom: 2,
-        maxZoom: 10
+        maxZoom: 10,
+        zoomControl: false // Hide zoom controls initially
     });
 
     // Add the tile layer (OpenStreetMap)
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: '© OpenStreetMap contributors'
+        attribution: 'OpenStreetMap contributors'
+    }).addTo(map);
+
+    // Add zoom control to bottom right
+    L.control.zoom({
+        position: 'bottomright'
     }).addTo(map);
 
     // Add markers for all airports
