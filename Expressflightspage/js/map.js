@@ -1,5 +1,6 @@
 // Initialize map
 let map;
+let markers = {}; // Store markers for easy access
 
 // Airport coordinates
 const airports = {
@@ -28,7 +29,44 @@ document.addEventListener('DOMContentLoaded', function() {
         mapBackground.classList.toggle('interactive');
         mapToggle.classList.toggle('active');
     });
+
+    // Setup destination input listener
+    const destinationInput = document.getElementById('to');
+    if (destinationInput) {
+        destinationInput.addEventListener('input', handleDestinationInput);
+    }
 });
+
+function handleDestinationInput(event) {
+    const input = event.target.value;
+    
+    // Reset map view if input is empty
+    if (!input) {
+        map.setView([20, 0], 2);
+        return;
+    }
+
+    // Find matching cities
+    const matchingCities = Object.keys(airports).filter(city => 
+        city.toLowerCase().includes(input.toLowerCase())
+    );
+
+    if (matchingCities.length > 0) {
+        const city = matchingCities[0]; // Get the first match
+        const coords = airports[city].coords;
+        
+        // Zoom to the city
+        map.setView(coords, 5, {
+            animate: true,
+            duration: 1
+        });
+
+        // Highlight the marker
+        if (markers[city]) {
+            markers[city].openPopup();
+        }
+    }
+}
 
 function initializeMap() {
     // Create the map centered on a world view
@@ -59,9 +97,12 @@ function initializeMap() {
             iconAnchor: [12, 12]
         });
 
-        L.marker(data.coords, { icon: airportIcon })
+        const marker = L.marker(data.coords, { icon: airportIcon })
             .bindPopup(`<strong>${city} (${data.code})</strong><br>International Airport`)
             .addTo(map);
+        
+        // Store marker reference
+        markers[city] = marker;
     });
 
     // Draw flight paths between major hubs
