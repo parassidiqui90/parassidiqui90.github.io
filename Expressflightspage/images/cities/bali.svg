@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="oceanGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#2196F3;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0D47A1;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="800" height="600" fill="#4CAF50"/>
+  <circle cx="600" cy="100" r="60" fill="#FDD835"/>
+  <path d="M0,300 Q 400,200 800,300 L 800,600 L 0,600 Z" fill="url(#oceanGradient)"/>
+  <path d="M300,200 L350,100 L400,200 Z" fill="#795548"/>
+  <text x="400" y="550" font-family="Arial" font-size="24" fill="#fff" text-anchor="middle">BALI</text>
+</svg>

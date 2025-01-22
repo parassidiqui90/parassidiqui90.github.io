@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Express Flights - Your Travel Partner</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .hero {
+            background-image: url('images/hero-background.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            position: relative;
+        }
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-overlay"></div>
+        <nav>
+            <div class="nav-container">
+                <div class="logo">
+                    <img src="images/express-flights-logo-white.svg" alt="Express Flights Logo" class="logo-img">
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#cities">Top Cities</a></li>
+                    <li><a href="#hotels">Hotels</a></li>
+                    <li><a href="#airlines">Airlines</a></li>
+                    <li><a href="#finder">Fare Finder</a></li>
+                </ul>
+            </div>
+        </nav>
+        <div class="hero-content">
+            <h1>Discover Your Next Adventure</h1>
+            <p class="hero-subtitle">Find the best deals on flights, hotels, and vacation packages</p>
+            <div class="hero-finder-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label><i class="fas fa-plane-departure"></i> From</label>
+                        <input type="text" placeholder="City or Airport" list="airports-from">
+                        <datalist id="airports-from">
+                            <option value="New York (JFK)">
+                            <option value="London (LHR)">
+                            <option value="Dubai (DXB)">
+                            <option value="Tokyo (HND)">
+                            <option value="Paris (CDG)">
+                        </datalist>
+                    </div>
+                    <div class="form-group">
+                        <label><i class="fas fa-plane-arrival"></i> To</label>
+                        <input type="text" placeholder="City or Airport" list="airports-to">
+                        <datalist id="airports-to">
+                            <option value="Singapore (SIN)">
+                            <option value="Sydney (SYD)">
+                            <option value="Los Angeles (LAX)">
+                            <option value="Hong Kong (HKG)">
+                            <option value="Rome (FCO)">
+                        </datalist>
+                    </div>
+                    <div class="form-group">
+                        <label><i class="fas fa-calendar-alt"></i> Departure</label>
+                        <input type="date">
+                    </div>
+                    <div class="form-group">
+                        <label><i class="fas fa-calendar-alt"></i> Return</label>
+                        <input type="date">
+                    </div>
+                </div>
+                <button class="search-btn">
+                    <i class="fas fa-search"></i> Find Best Fares
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Top Cities Section -->
+    <section id="cities" class="cities">
+        <h2>TOP CITIES</h2>
+        <div class="cities-grid">
+            <div class="city-card">
+                <img src="images/dubai.jpg" alt="Dubai">
+                <div class="city-info">
+                    <h3>Dubai</h3>
+                    <p>United Arab Emirates</p>
+                    <p class="price">From $899</p>
+                    <button class="book-btn">View Flights</button>
+                </div>
+            </div>
+            <div class="city-card">
+                <img src="images/paris.jpg" alt="Paris">
+                <div class="city-info">
+                    <h3>Paris</h3>
+                    <p>France</p>
+                    <p class="price">From $799</p>
+                    <button class="book-btn">View Flights</button>
+                </div>
+            </div>
+            <div class="city-card">
+                <img src="images/singapore.jpg" alt="Singapore">
+                <div class="city-info">
+                    <h3>Singapore</h3>
+                    <p>Singapore</p>
+                    <p class="price">From $699</p>
+                    <button class="book-btn">View Flights</button>
+                </div>
+            </div>
+            <div class="city-card">
+                <img src="images/newyork.jpg" alt="New York">
+                <div class="city-info">
+                    <h3>New York</h3>
+                    <p>United States</p>
+                    <p class="price">From $999</p>
+                    <button class="book-btn">View Flights</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Best Places Section -->
+    <section id="places" class="places">
+        <h2>BEST PLACES TO VISIT</h2>
+        <div class="places-grid">
+            <div class="place-card">
+                <img src="images/bali.jpg" alt="Bali">
+                <div class="place-info">
+                    <h3>Bali</h3>
+                    <p>Indonesia</p>
+                    <p class="price">From $799</p>
+                    <button class="book-btn">View Flights</button>
+                </div>
+            </div>
+            <div class="place-card">
+                <img src="images/maldives.jpg" alt="Maldives">
+                <div class="place-info">
+                    <h3>Maldives</h3>
+                    <p>Maldives</p>
+                    <p class="price">From $1099</p>
+                    <button class="book-btn">View Flights</button>
+                </div>
+            </div>
+            <div class="place-card">
+                <img src="images/santorini.jpg" alt="Santorini">
+                <div class="place-info">
+                    <h3>Santorini</h3>
+                    <p>Greece</p>
+                    <p class="price">From $899</p>
+                    <button class="book-btn">View Flights</button>
+                </div>
+            </div>
+            <div class="place-card">
+                <img src="images/venice.jpg" alt="Venice">
+                <div class="place-info">
+                    <h3>Venice</h3>
+                    <p>Italy</p>
+                    <p class="price">From $849</p>
+                    <button class="book-btn">View Flights</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Hotels Section -->
+    <section id="hotels" class="hotels">
+        <h2>FEATURED HOTELS</h2>
+        <div class="hotels-grid">
+            <div class="hotel-card">
+                <img src="images/hotel1.jpg" alt="Burj Al Arab">
+                <div class="hotel-info">
+                    <h3>Burj Al Arab</h3>
+                    <p>Dubai, UAE</p>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="price">From $1000/night</p>
+                    <button class="book-btn">Book Now</button>
+                </div>
+            </div>
+            <div class="hotel-card">
+                <img src="images/hotel2.jpg" alt="Marina Bay Sands">
+                <div class="hotel-info">
+                    <h3>Marina Bay Sands</h3>
+                    <p>Singapore</p>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="price">From $850/night</p>
+                    <button class="book-btn">Book Now</button>
+                </div>
+            </div>
+            <div class="hotel-card">
+                <img src="images/hotel3.jpg" alt="The Ritz Paris">
+                <div class="hotel-info">
+                    <h3>The Ritz Paris</h3>
+                    <p>Paris, France</p>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="price">From $1200/night</p>
+                    <button class="book-btn">Book Now</button>
+                </div>
+            </div>
+            <div class="hotel-card">
+                <img src="images/hotel4.jpg" alt="The Plaza">
+                <div class="hotel-info">
+                    <h3>The Plaza</h3>
+                    <p>New York, USA</p>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="price">From $950/night</p>
+                    <button class="book-btn">Book Now</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Best Airlines Section -->
+    <section id="airlines" class="airlines">
+        <h2>BEST AIRLINES</h2>
+        <div class="airlines-grid">
+            <div class="airline-card">
+                <div class="airline-icon">
+                    <i class="fas fa-plane fa-3x"></i>
+                </div>
+                <div class="airline-info">
+                    <h3>Emirates</h3>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="airline-card">
+                <div class="airline-icon">
+                    <i class="fas fa-plane fa-3x"></i>
+                </div>
+                <div class="airline-info">
+                    <h3>Qatar Airways</h3>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="airline-card">
+                <div class="airline-icon">
+                    <i class="fas fa-plane fa-3x"></i>
+                </div>
+                <div class="airline-info">
+                    <h3>Singapore Airlines</h3>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="airline-card">
+                <div class="airline-icon">
+                    <i class="fas fa-plane fa-3x"></i>
+                </div>
+                <div class="airline-info">
+                    <h3>Etihad Airways</h3>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fare Finder Section -->
+    <section id="finder" class="fare-finder">
+        <div class="fare-finder-container">
+            <h2>FARE FINDER</h2>
+            <div class="finder-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label><i class="fas fa-plane-departure"></i> From</label>
+                        <input type="text" placeholder="City or Airport" list="airports-from">
+                        <datalist id="airports-from">
+                            <option value="New York (JFK)">
+                            <option value="London (LHR)">
+                            <option value="Dubai (DXB)">
+                            <option value="Tokyo (HND)">
+                            <option value="Paris (CDG)">
+                        </datalist>
+                    </div>
+                    <div class="form-group">
+                        <label><i class="fas fa-plane-arrival"></i> To</label>
+                        <input type="text" placeholder="City or Airport" list="airports-to">
+                        <datalist id="airports-to">
+                            <option value="Singapore (SIN)">
+                            <option value="Sydney (SYD)">
+                            <option value="Los Angeles (LAX)">
+                            <option value="Hong Kong (HKG)">
+                            <option value="Rome (FCO)">
+                        </datalist>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label><i class="fas fa-calendar-alt"></i> Departure</label>
+                        <input type="date">
+                    </div>
+                    <div class="form-group">
+                        <label><i class="fas fa-calendar-alt"></i> Return</label>
+                        <input type="date">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group passengers">
+                        <label><i class="fas fa-users"></i> Passengers</label>
+                        <div class="passenger-select">
+                            <select>
+                                <option value="1">1 Adult</option>
+                                <option value="2">2 Adults</option>
+                                <option value="3">3 Adults</option>
+                                <option value="4">4 Adults</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group cabin">
+                        <label><i class="fas fa-couch"></i> Cabin Class</label>
+                        <div class="cabin-select">
+                            <select>
+                                <option value="economy">Economy</option>
+                                <option value="premium">Premium Economy</option>
+                                <option value="business">Business</option>
+                                <option value="first">First Class</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <button class="search-btn">
+                    <i class="fas fa-search"></i> Find Best Fares
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="features">
+        <h2>WHY CHOOSE US</h2>
+        <div class="features-grid">
+            <div class="feature">
+                <i class="fas fa-plane"></i>
+                <h3>Best Flights</h3>
+                <p>Find the best flights at the lowest prices</p>
+            </div>
+            <div class="feature">
+                <i class="fas fa-hotel"></i>
+                <h3>Best Hotels</h3>
+                <p>Luxury hotels at competitive rates</p>
+            </div>
+            <div class="feature">
+                <i class="fas fa-headset"></i>
+                <h3>24/7 Support</h3>
+                <p>Round the clock customer service</p>
+            </div>
+            <div class="feature">
+                <i class="fas fa-shield-alt"></i>
+                <h3>Secure Booking</h3>
+                <p>Safe and secure payment system</p>
+            </div>
+            <div class="feature">
+                <i class="fas fa-tag"></i>
+                <h3>Best Prices</h3>
+                <p>Price match guarantee on all bookings</p>
+            </div>
+            <div class="feature">
+                <i class="fas fa-gift"></i>
+                <h3>Rewards</h3>
+                <p>Earn points on every booking</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter">
+        <h2>GET THE BEST TRAVEL DEALS</h2>
+        <p>Subscribe to our newsletter and never miss out on exclusive offers</p>
+        <div class="newsletter-form">
+            <input type="email" placeholder="Enter your email address">
+            <button class="subscribe-btn">Subscribe</button>
+        </div>
+    </section>
+
+    <!-- Customer Reviews Section -->
+    <section class="reviews">
+        <h2>WHAT OUR CUSTOMERS SAY</h2>
+        <div class="reviews-grid">
+            <div class="review-card">
+                <img src="images/customer1.jpg" alt="Customer 1" class="review-img">
+                <div class="review-content">
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>"Amazing service and great deals! Will definitely book again."</p>
+                    <h4>John Smith</h4>
+                    <p class="location">New York, USA</p>
+                </div>
+            </div>
+            <div class="review-card">
+                <img src="images/customer2.jpg" alt="Customer 2" class="review-img">
+                <div class="review-content">
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>"Best travel website I've ever used. Highly recommended!"</p>
+                    <h4>Sarah Johnson</h4>
+                    <p class="location">London, UK</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About Us</h3>
+                <p>Express Flights is your trusted travel partner, offering the best deals on flights, hotels, and vacation packages.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#cities">Top Cities</a></li>
+                    <li><a href="#hotels">Hotels</a></li>
+                    <li><a href="#airlines">Airlines</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>Email: info@expressflights.com</p>
+                <p>Phone: +1 234 567 890</p>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Express Flights. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
