@@ -6,6 +6,8 @@
     <title>Express Flights - Your Travel Partner</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <style>
         .hero {
             background-image: url('images/hero-background.jpg');
@@ -46,41 +48,45 @@
             <h1>Discover Your Next Adventure</h1>
             <p class="hero-subtitle">Find the best deals on flights, hotels, and vacation packages</p>
             <div class="hero-finder-form">
-                <div class="form-row">
-                    <div class="form-group">
-                        <label><i class="fas fa-plane-departure"></i> From</label>
-                        <input type="text" placeholder="City or Airport" list="airports-from">
-                        <datalist id="airports-from">
-                            <option value="New York (JFK)">
-                            <option value="London (LHR)">
-                            <option value="Dubai (DXB)">
-                            <option value="Tokyo (HND)">
-                            <option value="Paris (CDG)">
-                        </datalist>
+                <form onsubmit="searchFlights(event)">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label><i class="fas fa-plane-departure"></i> From</label>
+                            <input type="text" id="flight-from" placeholder="City or Airport" list="airports-from" required>
+                            <datalist id="airports-from">
+                                <option value="New York">
+                                <option value="London">
+                                <option value="Dubai">
+                                <option value="Tokyo">
+                                <option value="Paris">
+                                <option value="Sydney">
+                            </datalist>
+                        </div>
+                        <div class="form-group">
+                            <label><i class="fas fa-plane-arrival"></i> To</label>
+                            <input type="text" id="flight-to" placeholder="City or Airport" list="airports-to" required>
+                            <datalist id="airports-to">
+                                <option value="Singapore">
+                                <option value="Sydney">
+                                <option value="Los Angeles">
+                                <option value="Hong Kong">
+                                <option value="Rome">
+                                <option value="New York">
+                            </datalist>
+                        </div>
+                        <div class="form-group">
+                            <label><i class="fas fa-calendar-alt"></i> Departure</label>
+                            <input type="date" id="departure-date" required>
+                        </div>
+                        <div class="form-group">
+                            <label><i class="fas fa-calendar-alt"></i> Return</label>
+                            <input type="date" id="return-date">
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label><i class="fas fa-plane-arrival"></i> To</label>
-                        <input type="text" placeholder="City or Airport" list="airports-to">
-                        <datalist id="airports-to">
-                            <option value="Singapore (SIN)">
-                            <option value="Sydney (SYD)">
-                            <option value="Los Angeles (LAX)">
-                            <option value="Hong Kong (HKG)">
-                            <option value="Rome (FCO)">
-                        </datalist>
-                    </div>
-                    <div class="form-group">
-                        <label><i class="fas fa-calendar-alt"></i> Departure</label>
-                        <input type="date">
-                    </div>
-                    <div class="form-group">
-                        <label><i class="fas fa-calendar-alt"></i> Return</label>
-                        <input type="date">
-                    </div>
-                </div>
-                <button class="search-btn">
-                    <i class="fas fa-search"></i> Find Best Fares
-                </button>
+                    <button type="submit" class="search-btn">
+                        <i class="fas fa-search"></i> Find Best Fares
+                    </button>
+                </form>
             </div>
         </div>
     </section>
@@ -379,6 +385,13 @@
         </div>
     </section>
 
+    <!-- Flight Map Section -->
+    <section id="flight-map" class="flight-map-section">
+        <h2>GLOBAL FLIGHT MAP</h2>
+        <p class="section-subtitle">Explore our flight routes across the globe</p>
+        <div id="map"></div>
+    </section>
+
     <!-- Why Choose Us Section -->
     <section class="features">
         <h2>WHY CHOOSE US</h2>
@@ -498,5 +511,7 @@
             <p>&copy; 2025 Express Flights. All rights reserved.</p>
         </div>
     </footer>
+    <script src="js/map.js"></script>
+    <script src="js/search.js"></script>
 </body>
 </html>

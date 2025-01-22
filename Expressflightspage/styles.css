@@ -501,6 +501,43 @@ section h2 {
     }
 }
 
+/* Flight Map Section */
+.flight-map-section {
+    padding: 4rem 2rem;
+    background: #f8f9fa;
+    text-align: center;
+}
+
+.flight-map-section h2 {
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.section-subtitle {
+    color: #6c757d;
+    margin-bottom: 2rem;
+}
+
+#map {
+    height: 600px;
+    width: 100%;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+/* Responsive map height */
+@media (max-width: 768px) {
+    #map {
+        height: 400px;
+    }
+
+    .flight-map-section {
+        padding: 2rem 1rem;
+    }
+}
+
 /* Newsletter Section */
 .newsletter {
     background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
