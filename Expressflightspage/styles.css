@@ -503,39 +503,56 @@ section h2 {
 
 /* Flight Map Section */
 .flight-map-section {
-    padding: 4rem 2rem;
-    background: #f8f9fa;
+    padding: 60px 0;
+    background-color: #f8f9fa;
     text-align: center;
 }
 
 .flight-map-section h2 {
-    margin-bottom: 1rem;
+    margin-bottom: 20px;
     color: #333;
 }
 
-.section-subtitle {
-    color: #6c757d;
-    margin-bottom: 2rem;
+.flight-map-section .section-subtitle {
+    margin-bottom: 40px;
+    color: #666;
 }
 
 #map {
     height: 600px;
     width: 100%;
-    border-radius: 15px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     margin: 0 auto;
-    max-width: 1200px;
+    z-index: 1;
 }
 
-/* Responsive map height */
-@media (max-width: 768px) {
-    #map {
-        height: 400px;
-    }
+/* Flight path animation */
+.flight-path {
+    stroke-dasharray: 8;
+    animation: dash 20s linear infinite;
+}
 
-    .flight-map-section {
-        padding: 2rem 1rem;
+@keyframes dash {
+    to {
+        stroke-dashoffset: -1000;
     }
+}
+
+/* Airport and plane icons */
+.airport-icon {
+    background: none;
+    border: none;
+}
+
+.plane-icon {
+    background: none;
+    border: none;
+    transition: transform 0.3s ease;
+}
+
+.plane-icon i {
+    transform-origin: center;
 }
 
 /* Newsletter Section */
