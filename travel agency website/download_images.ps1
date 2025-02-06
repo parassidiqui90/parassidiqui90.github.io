@@ -21,27 +21,19 @@ function Download-Image {
     }
 }
 
-# Download images using placeholder.com
+# Download images using reliable image URLs
 $images = @{
-    "hero-bg.jpg" = "https://via.placeholder.com/1600x900/2196f3/ffffff?text=Travel+Adventure"
-    "dubai.jpg" = "https://via.placeholder.com/800x600/2196f3/ffffff?text=Dubai"
-    "england.jpg" = "https://via.placeholder.com/800x600/2196f3/ffffff?text=England"
-    "norway.jpg" = "https://via.placeholder.com/800x600/2196f3/ffffff?text=Norway"
-    "thailand.jpg" = "https://via.placeholder.com/800x600/2196f3/ffffff?text=Thailand"
-    "newyork.jpg" = "https://via.placeholder.com/800x600/2196f3/ffffff?text=New+York"
-    "turkey.jpg" = "https://via.placeholder.com/800x600/2196f3/ffffff?text=Turkey"
-    "maldives.jpg" = "https://via.placeholder.com/800x600/2196f3/ffffff?text=Maldives"
-    "africa.jpg" = "https://via.placeholder.com/800x600/2196f3/ffffff?text=Africa"
-    "europe.jpg" = "https://via.placeholder.com/800x600/2196f3/ffffff?text=Europe"
-    "marina-bay.jpg" = "https://via.placeholder.com/800x600/2196f3/ffffff?text=Marina+Bay"
-}
-
-# Payment icons using placeholder.com
-$paymentIcons = @{
-    "visa.png" = "https://via.placeholder.com/100x60/ffffff/000000?text=Visa"
-    "mastercard.png" = "https://via.placeholder.com/100x60/ffffff/000000?text=Mastercard"
-    "amex.png" = "https://via.placeholder.com/100x60/ffffff/000000?text=Amex"
-    "paypal.png" = "https://via.placeholder.com/100x60/ffffff/000000?text=PayPal"
+    "hero-bg.jpg" = "https://images.pexels.com/photos/2325446/pexels-photo-2325446.jpeg"
+    "dubai.jpg" = "https://images.pexels.com/photos/1534411/pexels-photo-1534411.jpeg"
+    "england.jpg" = "https://images.pexels.com/photos/460672/pexels-photo-460672.jpeg"
+    "norway.jpg" = "https://images.pexels.com/photos/1933239/pexels-photo-1933239.jpeg"
+    "thailand.jpg" = "https://images.pexels.com/photos/1282667/pexels-photo-1282667.jpeg"
+    "newyork.jpg" = "https://images.pexels.com/photos/466685/pexels-photo-466685.jpeg"
+    "turkey.jpg" = "https://images.pexels.com/photos/1549326/pexels-photo-1549326.jpeg"
+    "maldives.jpg" = "https://images.pexels.com/photos/1287460/pexels-photo-1287460.jpeg"
+    "africa.jpg" = "https://images.pexels.com/photos/1707820/pexels-photo-1707820.jpeg"
+    "europe.jpg" = "https://images.pexels.com/photos/705764/pexels-photo-705764.jpeg"
+    "marina-bay.jpg" = "https://images.pexels.com/photos/1842332/pexels-photo-1842332.jpeg"
 }
 
 Write-Host "Downloading travel images..."
@@ -49,13 +41,6 @@ foreach ($image in $images.GetEnumerator()) {
     $filePath = Join-Path $imagesDir $image.Key
     Write-Host "Downloading $($image.Key)..."
     Download-Image -Url $image.Value -FilePath $filePath
-}
-
-Write-Host "Downloading payment icons..."
-foreach ($icon in $paymentIcons.GetEnumerator()) {
-    $filePath = Join-Path $imagesDir $icon.Key
-    Write-Host "Downloading $($icon.Key)..."
-    Download-Image -Url $icon.Value -FilePath $filePath
 }
 
 Write-Host "All images downloaded successfully!"

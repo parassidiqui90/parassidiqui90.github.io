@@ -3,379 +3,302 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TravelEase - Your Travel Partner</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <title>Travel Agency - Your Journey Begins Here</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
+    <header class="header">
         <div class="container">
-            <nav class="top-nav">
-                <a href="#" class="logo">
-                    TravelEase
+            <nav class="nav">
+                <a href="/" class="logo">
+                    <i class="fas fa-plane-departure"></i>
+                    TravelAgency
                 </a>
                 <div class="nav-right">
                     <ul class="nav-links">
                         <li><a href="#" class="active">Home</a></li>
                         <li><a href="#">Flights</a></li>
                         <li><a href="#">Hotels</a></li>
+                        <li><a href="#">Packages</a></li>
+                        <li><a href="#">Blog</a></li>
                         <li><a href="#">Contact</a></li>
                     </ul>
-                    <button class="login-btn">Login</button>
                 </div>
             </nav>
+        </div>
+    </header>
 
-            <div class="hero-content">
-                <h1>Search & Book Flights</h1>
-                <p>Find and book a great experience</p>
+    <section class="hero">
+        <div class="container">
+            <div class="search-container">
+                <div class="search-tabs">
+                    <button class="search-tab active">
+                        <i class="fas fa-plane"></i>
+                        Flight
+                    </button>
+                    <button class="search-tab">
+                        <i class="fas fa-hotel"></i>
+                        Hotel
+                    </button>
+                    <button class="search-tab">
+                        <i class="fas fa-car"></i>
+                        Car Rental
+                    </button>
+                </div>
                 
-                <div class="search-container">
-                    <div class="trip-type">
-                        <button class="active">
-                            <i class="fas fa-exchange-alt"></i>
-                            Round Trip
-                        </button>
-                        <button>
-                            <i class="fas fa-long-arrow-alt-right"></i>
-                            One-way
-                        </button>
-                        <button>
-                            <i class="fas fa-route"></i>
-                            Multi-city
-                        </button>
+                <form class="search-form">
+                    <div class="form-group">
+                        <label>From</label>
+                        <input type="text" placeholder="City or Airport">
                     </div>
-                    
-                    <div class="search-form">
-                        <div class="search-row">
-                            <div class="search-group">
-                                <div class="input-group">
-                                    <label>From</label>
-                                    <i class="fas fa-plane-departure"></i>
-                                    <input type="text" placeholder="Enter city or airport">
-                                </div>
-                            </div>
-                            
-                            <div class="search-divider">
-                                <i class="fas fa-exchange-alt"></i>
-                            </div>
-                            
-                            <div class="search-group">
-                                <div class="input-group">
-                                    <label>To</label>
-                                    <i class="fas fa-plane-arrival"></i>
-                                    <input type="text" placeholder="Enter city or airport">
-                                </div>
-                            </div>
-                            
-                            <div class="search-group">
-                                <div class="input-group">
-                                    <label>Depart - Return</label>
-                                    <i class="fas fa-calendar"></i>
-                                    <input type="text" placeholder="Select dates">
-                                </div>
-                            </div>
-                            
-                            <div class="search-group">
-                                <div class="input-group">
-                                    <label>Travelers & Class</label>
-                                    <i class="fas fa-user"></i>
-                                    <select>
-                                        <option>1 Adult, Economy</option>
-                                        <option>2 Adults, Economy</option>
-                                        <option>Business Class</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <button class="search-btn">
-                            <i class="fas fa-search"></i>
-                            Search Flights
-                        </button>
+                    <div class="form-group">
+                        <label>To</label>
+                        <input type="text" placeholder="City or Airport">
+                    </div>
+                    <div class="form-group">
+                        <label>Departure</label>
+                        <input type="date">
+                    </div>
+                    <div class="form-group">
+                        <label>Return</label>
+                        <input type="date">
+                    </div>
+                    <button type="submit" class="search-btn">
+                        <i class="fas fa-search"></i>
+                        Search
+                    </button>
+                </form>
+            </div>
+
+            <div class="features">
+                <div class="feature">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>Safe Travel</span>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-tag"></i>
+                    <span>Best Prices</span>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-clock"></i>
+                    <span>24/7 Support</span>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Global Coverage</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Top Flight Deals</h2>
+                <p class="section-subtitle">Find and book your perfect trip with our exclusive deals</p>
+            </div>
+            <div class="deals-grid">
+                <a href="#" class="deal-card">
+                    <img src="images/dubai.jpg" alt="Dubai">
+                    <div class="deal-content">
+                        <h3 class="deal-title">Dubai</h3>
+                        <p class="deal-subtitle">United Arab Emirates</p>
+                    </div>
+                </a>
+                <a href="#" class="deal-card">
+                    <img src="images/england.jpg" alt="England">
+                    <div class="deal-content">
+                        <h3 class="deal-title">London</h3>
+                        <p class="deal-subtitle">United Kingdom</p>
+                    </div>
+                </a>
+                <a href="#" class="deal-card">
+                    <img src="images/norway.jpg" alt="Norway">
+                    <div class="deal-content">
+                        <h3 class="deal-title">Norway</h3>
+                        <p class="deal-subtitle">Scandinavia</p>
+                    </div>
+                </a>
+                <a href="#" class="deal-card">
+                    <img src="images/dubai.jpg" alt="Dubai">
+                    <div class="deal-content">
+                        <h3 class="deal-title">Dubai</h3>
+                        <p class="deal-subtitle">United Arab Emirates</p>
+                    </div>
+                </a>
+                <a href="#" class="deal-card">
+                    <img src="images/thailand.jpg" alt="Thailand">
+                    <div class="deal-content">
+                        <h3 class="deal-title">Bangkok</h3>
+                        <p class="deal-subtitle">Thailand</p>
+                    </div>
+                </a>
+                <a href="#" class="deal-card">
+                    <img src="images/newyork.jpg" alt="New York">
+                    <div class="deal-content">
+                        <h3 class="deal-title">New York</h3>
+                        <p class="deal-subtitle">United States</p>
+                    </div>
+                </a>
+                <a href="#" class="deal-card">
+                    <img src="images/turkey.jpg" alt="Turkey">
+                    <div class="deal-content">
+                        <h3 class="deal-title">Istanbul</h3>
+                        <p class="deal-subtitle">Turkey</p>
+                    </div>
+                </a>
+                <a href="#" class="deal-card">
+                    <img src="images/maldives.jpg" alt="Maldives">
+                    <div class="deal-content">
+                        <h3 class="deal-title">Maldives</h3>
+                        <p class="deal-subtitle">Indian Ocean</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Perfect Holiday Packages</h2>
+                <p class="section-subtitle">Find and book your dream vacation package</p>
+            </div>
+            <div class="packages-grid">
+                <div class="package-card">
+                    <div class="package-image">
+                        <img src="images/africa.jpg" alt="African Safari">
+                        <span class="package-tag">20% OFF</span>
+                    </div>
+                    <div class="package-content">
+                        <h3 class="package-title">African Safari Adventure</h3>
+                        <p class="package-details">7 Days | All Inclusive</p>
+                        <div class="package-price">$1,299</div>
+                        <button class="package-btn">View Details</button>
+                    </div>
+                </div>
+                <div class="package-card">
+                    <div class="package-image">
+                        <img src="images/europe.jpg" alt="European Tour">
+                        <span class="package-tag">Popular</span>
+                    </div>
+                    <div class="package-content">
+                        <h3 class="package-title">European Discovery</h3>
+                        <p class="package-details">10 Days | 5 Countries</p>
+                        <div class="package-price">$2,499</div>
+                        <button class="package-btn">View Details</button>
+                    </div>
+                </div>
+                <div class="package-card">
+                    <div class="package-image">
+                        <img src="images/thailand.jpg" alt="Thai Paradise">
+                        <span class="package-tag">Best Seller</span>
+                    </div>
+                    <div class="package-content">
+                        <h3 class="package-title">Thai Paradise</h3>
+                        <p class="package-details">5 Days | Luxury Resort</p>
+                        <div class="package-price">$899</div>
+                        <button class="package-btn">View Details</button>
+                    </div>
+                </div>
+                <div class="package-card">
+                    <div class="package-image">
+                        <img src="images/dubai.jpg" alt="Dubai Explorer">
+                        <span class="package-tag">New</span>
+                    </div>
+                    <div class="package-content">
+                        <h3 class="package-title">Dubai Explorer</h3>
+                        <p class="package-details">6 Days | Desert Safari</p>
+                        <div class="package-price">$1,599</div>
+                        <button class="package-btn">View Details</button>
                     </div>
                 </div>
             </div>
         </div>
-    </header>
+    </section>
 
-    <main>
-        <section class="top-flights">
-            <div class="container">
-                <div class="section-header">
-                    <h2>Top Flight Deals</h2>
-                    <p>Find the best flight deals from a variety of airlines and destinations</p>
-                </div>
-                <div class="deals-grid">
-                    <a href="#" class="deal-card">
-                        <picture>
-                            <source srcset="images/dubai.webp" type="image/webp">
-                            <img src="images/dubai.jpg" alt="Dubai">
-                        </picture>
-                        <div class="deal-info">
-                            <h3>Dubai</h3>
-                            <p>Starting from $299</p>
-                        </div>
-                    </a>
-                    <a href="#" class="deal-card">
-                        <picture>
-                            <source srcset="images/england.webp" type="image/webp">
-                            <img src="images/england.jpg" alt="England">
-                        </picture>
-                        <div class="deal-info">
-                            <h3>England</h3>
-                            <p>Starting from $499</p>
-                        </div>
-                    </a>
-                    <a href="#" class="deal-card">
-                        <picture>
-                            <source srcset="images/norway.webp" type="image/webp">
-                            <img src="images/norway.jpg" alt="Norway">
-                        </picture>
-                        <div class="deal-info">
-                            <h3>Norway</h3>
-                            <p>Starting from $399</p>
-                        </div>
-                    </a>
-                    <a href="#" class="deal-card">
-                        <picture>
-                            <source srcset="images/thailand.webp" type="image/webp">
-                            <img src="images/thailand.jpg" alt="Thailand">
-                        </picture>
-                        <div class="deal-info">
-                            <h3>Thailand</h3>
-                            <p>Starting from $349</p>
-                        </div>
-                    </a>
-                    <a href="#" class="deal-card">
-                        <picture>
-                            <source srcset="images/newyork.webp" type="image/webp">
-                            <img src="images/newyork.jpg" alt="New York">
-                        </picture>
-                        <div class="deal-info">
-                            <h3>New York</h3>
-                            <p>Starting from $199</p>
-                        </div>
-                    </a>
-                    <a href="#" class="deal-card">
-                        <picture>
-                            <source srcset="images/turkey.webp" type="image/webp">
-                            <img src="images/turkey.jpg" alt="Turkey">
-                        </picture>
-                        <div class="deal-info">
-                            <h3>Turkey</h3>
-                            <p>Starting from $449</p>
-                        </div>
-                    </a>
-                    <a href="#" class="deal-card">
-                        <picture>
-                            <source srcset="images/maldives.webp" type="image/webp">
-                            <img src="images/maldives.jpg" alt="Maldives">
-                        </picture>
-                        <div class="deal-info">
-                            <h3>Maldives</h3>
-                            <p>Starting from $599</p>
-                        </div>
-                    </a>
-                    <a href="#" class="deal-card">
-                        <picture>
-                            <source srcset="images/africa.webp" type="image/webp">
-                            <img src="images/africa.jpg" alt="Africa">
-                        </picture>
-                        <div class="deal-info">
-                            <h3>Africa</h3>
-                            <p>Starting from $349</p>
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <section class="holiday-packages">
-            <div class="container">
-                <div class="section-header">
-                    <h2>Perfect Holiday Packages</h2>
-                    <p>Create the perfect holiday by checking out these curated packages</p>
-                </div>
-                <div class="packages-grid">
-                    <div class="package-card">
-                        <div class="package-image">
-                            <picture>
-                                <source srcset="images/maldives.webp" type="image/webp">
-                                <img src="images/maldives.jpg" alt="Maldives">
-                            </picture>
-                            <span class="tag">Popular</span>
-                        </div>
-                        <div class="package-info">
-                            <div class="package-details">
-                                <h3>Maldives Adventure</h3>
-                                <p>7 Days | All Inclusive</p>
-                                <div class="price">From $1,299</div>
-                            </div>
-                            <button class="view-details">View Details</button>
-                        </div>
-                    </div>
-                    <div class="package-card">
-                        <div class="package-image">
-                            <picture>
-                                <source srcset="images/africa.webp" type="image/webp">
-                                <img src="images/africa.jpg" alt="African Safari">
-                            </picture>
-                            <span class="tag">New</span>
-                        </div>
-                        <div class="package-info">
-                            <div class="package-details">
-                                <h3>African Safari</h3>
-                                <p>10 Days | Guided Tour</p>
-                                <div class="price">From $2,499</div>
-                            </div>
-                            <button class="view-details">View Details</button>
-                        </div>
-                    </div>
-                    <div class="package-card">
-                        <div class="package-image">
-                            <picture>
-                                <source srcset="images/thailand.webp" type="image/webp">
-                                <img src="images/thailand.jpg" alt="Thailand Adventure">
-                            </picture>
-                        </div>
-                        <div class="package-info">
-                            <div class="package-details">
-                                <h3>Thailand Adventure</h3>
-                                <p>5 Days | Full Board</p>
-                                <div class="price">From $899</div>
-                            </div>
-                            <button class="view-details">View Details</button>
-                        </div>
-                    </div>
-                    <div class="package-card">
-                        <div class="package-image">
-                            <picture>
-                                <source srcset="images/europe.webp" type="image/webp">
-                                <img src="images/europe.jpg" alt="European Tour">
-                            </picture>
-                            <span class="tag">Best Seller</span>
-                        </div>
-                        <div class="package-info">
-                            <div class="package-details">
-                                <h3>European Tour</h3>
-                                <p>14 Days | Multi-City</p>
-                                <div class="price">From $3,299</div>
-                            </div>
-                            <button class="view-details">View Details</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="hotel-deals">
-            <div class="container">
-                <div class="section-header">
-                    <h2>Exclusive Hotel Deals</h2>
-                    <p>Find special offers at these amazing hotels</p>
-                </div>
-                <div class="hotels-grid">
-                    <div class="hotel-card">
-                        <picture>
-                            <source srcset="images/marina-bay.webp" type="image/webp">
-                            <img src="images/marina-bay.jpg" alt="Marina Bay Sands">
-                        </picture>
-                        <div class="hotel-info">
-                            <div class="hotel-details">
-                                <h3>Marina Bay Sands</h3>
-                                <p class="location">
-                                    <i class="fas fa-map-marker-alt"></i>
-                                    Singapore
-                                </p>
-                                <div class="rating">★★★★★</div>
-                                <p class="price">From $450/night</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="hotel-card">
-                        <picture>
-                            <source srcset="images/dubai.webp" type="image/webp">
-                            <img src="images/dubai.jpg" alt="Burj Al Arab">
-                        </picture>
-                        <div class="hotel-info">
-                            <div class="hotel-details">
-                                <h3>Burj Al Arab</h3>
-                                <p class="location">
-                                    <i class="fas fa-map-marker-alt"></i>
-                                    Dubai, UAE
-                                </p>
-                                <div class="rating">★★★★★</div>
-                                <p class="price">From $1,200/night</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="hotel-card">
-                        <picture>
-                            <source srcset="images/thailand.webp" type="image/webp">
-                            <img src="images/thailand.jpg" alt="Mandarin Oriental">
-                        </picture>
-                        <div class="hotel-info">
-                            <div class="hotel-details">
-                                <h3>Mandarin Oriental</h3>
-                                <p class="location">
-                                    <i class="fas fa-map-marker-alt"></i>
-                                    Bangkok, Thailand
-                                </p>
-                                <div class="rating">★★★★★</div>
-                                <p class="price">From $350/night</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer>
+    <section class="section">
         <div class="container">
-            <div class="footer-content">
+            <div class="section-header">
+                <h2 class="section-title">Exclusive Hotel Deals</h2>
+                <p class="section-subtitle">Find and book luxury accommodations worldwide</p>
+            </div>
+            <div class="hotels-grid">
+                <div class="hotel-card">
+                    <img src="images/marina-bay.jpg" alt="Marina Bay Sands">
+                    <div class="hotel-content">
+                        <h3 class="hotel-title">Marina Bay Sands</h3>
+                        <p class="hotel-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            Singapore
+                        </p>
+                    </div>
+                </div>
+                <div class="hotel-card">
+                    <img src="images/dubai.jpg" alt="Burj Al Arab">
+                    <div class="hotel-content">
+                        <h3 class="hotel-title">Burj Al Arab</h3>
+                        <p class="hotel-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            Dubai, UAE
+                        </p>
+                    </div>
+                </div>
+                <div class="hotel-card">
+                    <img src="images/maldives.jpg" alt="Maldives Resort">
+                    <div class="hotel-content">
+                        <h3 class="hotel-title">Ocean Paradise Resort</h3>
+                        <p class="hotel-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            Maldives
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
                 <div class="footer-section">
-                    <h3>Contact Us</h3>
-                    <ul>
-                        <li><i class="fas fa-envelope"></i> info@travelease.com</li>
-                        <li><i class="fas fa-phone"></i> +1 234 567 890</li>
-                        <li><i class="fas fa-map-marker-alt"></i> 123 Travel Street, City</li>
+                    <h3 class="footer-title">About Us</h3>
+                    <p>We are dedicated to providing the best travel experiences worldwide. Our team of experts is here to help you plan your perfect trip.</p>
+                    <div class="payment-methods">
+                        <i class="fab fa-cc-visa fa-2x"></i>
+                        <i class="fab fa-cc-mastercard fa-2x"></i>
+                        <i class="fab fa-cc-amex fa-2x"></i>
+                        <i class="fab fa-cc-paypal fa-2x"></i>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3 class="footer-title">Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#" class="footer-link">About Us</a></li>
+                        <li><a href="#" class="footer-link">Contact Us</a></li>
+                        <li><a href="#" class="footer-link">Terms & Conditions</a></li>
+                        <li><a href="#" class="footer-link">Privacy Policy</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
-                    <h3>Follow Us</h3>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-linkedin"></i></a>
-                    </div>
-                </div>
-                <div class="footer-section">
-                    <h3>Payment Methods</h3>
-                    <div class="payment-methods">
-                        <picture>
-                            <source srcset="images/visa.webp" type="image/webp">
-                            <img src="images/visa.png" alt="Visa">
-                        </picture>
-                        <picture>
-                            <source srcset="images/mastercard.webp" type="image/webp">
-                            <img src="images/mastercard.png" alt="Mastercard">
-                        </picture>
-                        <picture>
-                            <source srcset="images/amex.webp" type="image/webp">
-                            <img src="images/amex.png" alt="American Express">
-                        </picture>
-                        <picture>
-                            <source srcset="images/paypal.webp" type="image/webp">
-                            <img src="images/paypal.png" alt="PayPal">
-                        </picture>
-                    </div>
+                    <h3 class="footer-title">Contact Info</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-phone"></i> +1 234 567 8900</li>
+                        <li><i class="fas fa-envelope"></i> info@travelagency.com</li>
+                        <li><i class="fas fa-map-marker-alt"></i> 123 Travel Street, City</li>
+                    </ul>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 TravelEase. All rights reserved.</p>
+                <p>&copy; 2024 Travel Agency. All rights reserved.</p>
+                <div class="payment-methods">
+                    <i class="fab fa-cc-visa fa-2x"></i>
+                    <i class="fab fa-cc-mastercard fa-2x"></i>
+                    <i class="fab fa-cc-amex fa-2x"></i>
+                    <i class="fab fa-cc-paypal fa-2x"></i>
+                </div>
             </div>
         </div>
     </footer>
